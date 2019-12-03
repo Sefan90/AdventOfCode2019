@@ -4,7 +4,7 @@ Solutions for [Advent of code](https://adventofcode.com/)
 ## Solutions
 * [Day 1: The Tyranny of the Rocket Equation](https://github.com/Sefan90/AdventOfCode2019/tree/master/AdventOfCode2019Day1)
 * [Day 2: 1202 Program Alarm](https://github.com/Sefan90/AdventOfCode2019/tree/master/AdventOfCode2019Day2)
-* [Day 3](https://github.com/Sefan90/AdventOfCode2019/tree/master/AdventOfCode2019Day3)
+* [Day 3: Crossed Wires](https://github.com/Sefan90/AdventOfCode2019/tree/master/AdventOfCode2019Day3)
 * [Day 4](https://github.com/Sefan90/AdventOfCode2019/tree/master/AdventOfCode2019Day4)
 * [Day 5](https://github.com/Sefan90/AdventOfCode2019/tree/master/AdventOfCode2019Day5)
 * [Day 6](https://github.com/Sefan90/AdventOfCode2019/tree/master/AdventOfCode2019Day6)
