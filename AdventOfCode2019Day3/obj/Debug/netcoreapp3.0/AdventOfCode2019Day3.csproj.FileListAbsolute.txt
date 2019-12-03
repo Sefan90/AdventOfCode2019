@@ -1,0 +1,11 @@
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day3\bin\Debug\netcoreapp3.0\AdventOfCode2019Day3.exe
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day3\bin\Debug\netcoreapp3.0\AdventOfCode2019Day3.deps.json
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day3\bin\Debug\netcoreapp3.0\AdventOfCode2019Day3.runtimeconfig.json
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day3\bin\Debug\netcoreapp3.0\AdventOfCode2019Day3.runtimeconfig.dev.json
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day3\bin\Debug\netcoreapp3.0\AdventOfCode2019Day3.dll
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day3\bin\Debug\netcoreapp3.0\AdventOfCode2019Day3.pdb
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day3\obj\Debug\netcoreapp3.0\AdventOfCode2019Day3.csprojAssemblyReference.cache
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day3\obj\Debug\netcoreapp3.0\AdventOfCode2019Day3.AssemblyInfoInputs.cache
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day3\obj\Debug\netcoreapp3.0\AdventOfCode2019Day3.AssemblyInfo.cs
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day3\obj\Debug\netcoreapp3.0\AdventOfCode2019Day3.dll
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day3\obj\Debug\netcoreapp3.0\AdventOfCode2019Day3.pdb
