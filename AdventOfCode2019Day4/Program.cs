@@ -49,7 +49,7 @@ namespace AdventOfCode2019Day4
             while (num > 0)
             {
                 listOfInts.Add(num % 10);
-                num = num / 10;
+                num /= 10;
             }
             listOfInts.Reverse();
             return listOfInts;
