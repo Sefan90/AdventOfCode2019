@@ -22,8 +22,9 @@ def Part1():
 
 		if i+2 < len(input): #För att inte få out of range på input
 			#print("I:"+str(i)+" OP:"+str(item)+" In1:"+str(input[i + 1])+" In2:"+str(input[i + 2])+" In3:"+str(input[i + 3]))
-			input1 = input[i + 1]
 			input2 = input[i + 2]
+		if i+1 < len(input):
+			input1 = input[i + 1]
 			
 		item_list = GetReverseIntArray(item)
 		#print(i)
