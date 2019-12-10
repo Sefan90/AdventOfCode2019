@@ -8,6 +8,7 @@ def GetReverseIntArray(number):
 	return result
 
 def IntcodeComputer(input,startInput):
+	startInputCounter = 0
 	skipUntil = 0
 	output = 0
 	for i, item in enumerate(input):
@@ -63,7 +64,8 @@ def IntcodeComputer(input,startInput):
 			skipUntil += 4
 		
 		elif (item_list[0] == 3):
-			input[input[i + 1]] = startInput
+			input[input[i + 1]] = startInput[startInputCounter]
+			startInputCounter += 1
 			skipUntil += 2
 		
 		elif (item_list[0] == 4):
@@ -115,13 +117,21 @@ def IntcodeComputer(input,startInput):
 	#print(input[0])
 
 def PhaseSender():
-	startInput = 0
-	phases = [4,3,2,1,0]
-	inputlist = [3,15,3,16,1002,16,10,16,1,16,15,15,4,15,99,0,0]
+	output = 0
+	for a in range(5):
+		for b in range(5):
+			for c in range(5):
+				for d in range(5):
+					for e in range(5):
+						if a not in [b,c,d,e] and b not in [c,d,e] and c not in [d,e] and d not in [e]:
+							phases = [a,b,c,d,e]
+							startInput = 0
+							inputlist = [3,8,1001,8,10,8,105,1,0,0,21,42,55,64,85,98,179,260,341,422,99999,3,9,101,2,9,9,102,5,9,9,1001,9,2,9,1002,9,5,9,4,9,99,3,9,1001,9,5,9,1002,9,4,9,4,9,99,3,9,101,3,9,9,4,9,99,3,9,1002,9,4,9,101,3,9,9,102,5,9,9,101,4,9,9,4,9,99,3,9,1002,9,3,9,1001,9,3,9,4,9,99,3,9,1002,9,2,9,4,9,3,9,101,1,9,9,4,9,3,9,101,1,9,9,4,9,3,9,1002,9,2,9,4,9,3,9,101,1,9,9,4,9,3,9,101,1,9,9,4,9,3,9,101,2,9,9,4,9,3,9,1001,9,1,9,4,9,3,9,1002,9,2,9,4,9,3,9,1001,9,2,9,4,9,99,3,9,1002,9,2,9,4,9,3,9,101,2,9,9,4,9,3,9,1001,9,2,9,4,9,3,9,101,2,9,9,4,9,3,9,102,2,9,9,4,9,3,9,1002,9,2,9,4,9,3,9,101,1,9,9,4,9,3,9,1002,9,2,9,4,9,3,9,102,2,9,9,4,9,3,9,101,2,9,9,4,9,99,3,9,1002,9,2,9,4,9,3,9,1002,9,2,9,4,9,3,9,101,1,9,9,4,9,3,9,1001,9,2,9,4,9,3,9,1002,9,2,9,4,9,3,9,101,1,9,9,4,9,3,9,101,2,9,9,4,9,3,9,101,2,9,9,4,9,3,9,102,2,9,9,4,9,3,9,102,2,9,9,4,9,99,3,9,102,2,9,9,4,9,3,9,102,2,9,9,4,9,3,9,1001,9,2,9,4,9,3,9,1001,9,1,9,4,9,3,9,1001,9,1,9,4,9,3,9,101,1,9,9,4,9,3,9,1002,9,2,9,4,9,3,9,101,2,9,9,4,9,3,9,1002,9,2,9,4,9,3,9,1002,9,2,9,4,9,99,3,9,1001,9,1,9,4,9,3,9,102,2,9,9,4,9,3,9,1001,9,1,9,4,9,3,9,1002,9,2,9,4,9,3,9,1002,9,2,9,4,9,3,9,101,2,9,9,4,9,3,9,1001,9,1,9,4,9,3,9,1002,9,2,9,4,9,3,9,102,2,9,9,4,9,3,9,102,2,9,9,4,9,99]
+							for phase in phases:
+								startInput = IntcodeComputer(inputlist,[phase,startInput])
+							if output < startInput:
+								output = startInput
+	print(output)
 
-	for phase in phases:
-		templist = inputlist.copy()
-		templist[0] = phase
-		startInput = IntcodeComputer(templist,startInput)
 
 PhaseSender();

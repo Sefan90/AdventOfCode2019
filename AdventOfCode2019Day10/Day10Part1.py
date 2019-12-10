@@ -1,4 +1,7 @@
-def FindAsteroids(map,ex,ey):
+def FindAsteroids(cordlist,cord):
+
+	for c in cordlist:
+		c[0] -=
 	counter = 0
 	cords = []
 	remove = []
@@ -23,6 +26,7 @@ def FindAsteroids(map,ex,ey):
 	return len(cords)
 
 def Part1():
+	cords = []
 	mostAsteroids = 0
 	map = [".#..##.###...#######",
 "##.############..##.",
@@ -46,11 +50,10 @@ def Part1():
 "###.##.####.##.#..##"]
 	for x in range(len(map)):
 		for y in range(len(map[x])):
-			temp = 0
 			if map[x][y] == "#":
-				temp = FindAsteroids(map,x,y)
-			if mostAsteroids < temp:
-				mostAsteroids = temp
+				cords.append([x,y])
+	for c in cords:
+		FindAsteroids(cords,c)
 	print(mostAsteroids)
 
 Part1()
