@@ -21,11 +21,14 @@ def modeChecker(input,opcode,*args):
 		else:
 			input[input[opcode+args[0]]] = args[1]	
 
-def IntcodeComputer(input,startInput):
+def IntcodeComputer(amp):
+	input = amp[0]
+	i = amp[1]
+	startInput =amp[2]
 	startInputCounter = 0
 	output = 0
 	breaks = False
-	i = 0
+
 	while i < len(input):
 		if (modeChecker(input,i) == 1):
 			modeChecker(input,i,3,modeChecker(input,i,1) + modeChecker(input,i,2))
@@ -36,6 +39,7 @@ def IntcodeComputer(input,startInput):
 			i += 4
 		
 		elif (modeChecker(input,i) == 3):
+			print(startInput)
 			modeChecker(input,i,1,startInput[startInputCounter])
 			startInputCounter += 1
 			i += 2
@@ -45,6 +49,7 @@ def IntcodeComputer(input,startInput):
 			output = modeChecker(input,i,1)
 			startInput.append(modeChecker(input,i,1))
 			i += 2
+			return [input,i,[output]]
 		
 		elif (modeChecker(input,i) == 5):
 			if modeChecker(input,i,1) != 0:
@@ -72,8 +77,7 @@ def IntcodeComputer(input,startInput):
 				modeChecker(input,i,3,0)
 			i += 4
 		else:
-			break;
-	return breaks, output
+			return [None,i,[output]]
 
 def PhaseSender():
 	output = 0
@@ -89,14 +93,20 @@ def PhaseSender():
 							#inputlist = [3,26,1001,26,-4,26,3,27,1002,27,2,27,1,27,26,27,4,27,1001,28,-1,28,1005,28,6,99,0,0,5]
 							inputlist = [3,52,1001,52,-5,52,3,53,1,52,56,54,1007,54,5,55,1005,55,26,1001,54,-5,54,1105,1,12,1,53,54,53,1008,54,0,55,1001,55,1,55,2,53,55,53,4,53,1001,56,-1,56,1005,56,6,99,0,0,0,0,10]
 							#inputlist = [3,8,1001,8,10,8,105,1,0,0,21,42,55,64,85,98,179,260,341,422,99999,3,9,101,2,9,9,102,5,9,9,1001,9,2,9,1002,9,5,9,4,9,99,3,9,1001,9,5,9,1002,9,4,9,4,9,99,3,9,101,3,9,9,4,9,99,3,9,1002,9,4,9,101,3,9,9,102,5,9,9,101,4,9,9,4,9,99,3,9,1002,9,3,9,1001,9,3,9,4,9,99,3,9,1002,9,2,9,4,9,3,9,101,1,9,9,4,9,3,9,101,1,9,9,4,9,3,9,1002,9,2,9,4,9,3,9,101,1,9,9,4,9,3,9,101,1,9,9,4,9,3,9,101,2,9,9,4,9,3,9,1001,9,1,9,4,9,3,9,1002,9,2,9,4,9,3,9,1001,9,2,9,4,9,99,3,9,1002,9,2,9,4,9,3,9,101,2,9,9,4,9,3,9,1001,9,2,9,4,9,3,9,101,2,9,9,4,9,3,9,102,2,9,9,4,9,3,9,1002,9,2,9,4,9,3,9,101,1,9,9,4,9,3,9,1002,9,2,9,4,9,3,9,102,2,9,9,4,9,3,9,101,2,9,9,4,9,99,3,9,1002,9,2,9,4,9,3,9,1002,9,2,9,4,9,3,9,101,1,9,9,4,9,3,9,1001,9,2,9,4,9,3,9,1002,9,2,9,4,9,3,9,101,1,9,9,4,9,3,9,101,2,9,9,4,9,3,9,101,2,9,9,4,9,3,9,102,2,9,9,4,9,3,9,102,2,9,9,4,9,99,3,9,102,2,9,9,4,9,3,9,102,2,9,9,4,9,3,9,1001,9,2,9,4,9,3,9,1001,9,1,9,4,9,3,9,1001,9,1,9,4,9,3,9,101,1,9,9,4,9,3,9,1002,9,2,9,4,9,3,9,101,2,9,9,4,9,3,9,1002,9,2,9,4,9,3,9,1002,9,2,9,4,9,99,3,9,1001,9,1,9,4,9,3,9,102,2,9,9,4,9,3,9,1001,9,1,9,4,9,3,9,1002,9,2,9,4,9,3,9,1002,9,2,9,4,9,3,9,101,2,9,9,4,9,3,9,1001,9,1,9,4,9,3,9,1002,9,2,9,4,9,3,9,102,2,9,9,4,9,3,9,102,2,9,9,4,9,99]
-							#while True:	
-							for phase in phases:
-								breaks = False
-								print(phase)
-								breaks, startInput = IntcodeComputer(inputlist,[phase,startInput])
-								if output < startInput:
-									output = startInput
+							amp = [[inputlist,0,[phases[0],startInput]],[inputlist,0,[phases[1],startInput]],[inputlist,0,[phases[2],startInput]],[inputlist,0,[phases[3],startInput]],[inputlist,0,[phases[4],startInput]]]
+							while True:	
+								for i in range(len(phases)):
+									amp[i] = IntcodeComputer(amp[i])
+									if len(amp[(i+1)%5][2]) == 1:
+										amp[(i+1)%5][2][0] = amp[i][2][0]
+									else:
+										amp[(i+1)%5][2][1] = amp[i][2][0]
+									#breaks, startInput = IntcodeComputer(inputlist,[phase,startInput])
+								if output < amp[4][2][0]:
+									output = amp[4][2][0]
 									print(output)
+								if amp[i][0] == None:
+									break
 								#if breaks:
 								#	break
 	print(output)
