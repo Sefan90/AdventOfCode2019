@@ -27,7 +27,6 @@ def IntcodeComputer(amp):
 	startInput =amp[2]
 	startInputCounter = 0
 	output = 0
-	breaks = False
 
 	while i < len(input):
 		if (modeChecker(input,i) == 1):
@@ -45,7 +44,6 @@ def IntcodeComputer(amp):
 			i += 2
 		
 		elif (modeChecker(input,i) == 4):
-			#print(input[input[i + 1]])
 			output = modeChecker(input,i,1)
 			startInput.append(modeChecker(input,i,1))
 			i += 2
@@ -88,7 +86,6 @@ def PhaseSender():
 				for d in range(5,10):
 					for e in range(5,10):
 						if a not in [b,c,d,e] and b not in [c,d,e] and c not in [d,e] and d not in [e]:
-							breaks = False
 							phases = [a,b,c,d,e]
 							startInput = 0
 							#inputlist = [3,26,1001,26,-4,26,3,27,1002,27,2,27,1,27,26,27,4,27,1001,28,-1,28,1005,28,6,99,0,0,5]
@@ -102,13 +99,11 @@ def PhaseSender():
 										amp[(i+1)%5][2][0] = amp[i][2][0]
 									else:
 										amp[(i+1)%5][2][1] = amp[i][2][0]
-									#breaks, startInput = IntcodeComputer(inputlist,[phase,startInput])
+									print("StartPos: "+str(amp[i][1]))
 								if output < amp[4][2][0]:
 									output = amp[4][2][0]
 								if amp[i][0] == None:
 									break
-								#if breaks:
-								#	break
 							print(str(output)+" "+str(amp[4][2][0]))
 	print(output)
 
