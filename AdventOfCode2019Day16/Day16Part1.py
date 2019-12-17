@@ -15,6 +15,7 @@ def MakePattern(inputList):
 		for b in range(len(basePattern)):
 			bigPattern.insert(i*b,basePattern[b])
 		listPattern.append(bigPattern)
+		print(listPattern[0])
 	return listPattern
 
 def Part1():
