@@ -18,11 +18,9 @@ def Part2():
 						vel[x][y] += 1
 					elif moons[x][y] > moon[y]:
 						vel[x][y] -= 1
-		for x in range(len(moons)):
-			for y in range(len(moon)):	
-				moons[x][y] += vel[x][y]
+		moons = [[x+y for x,y in zip(m,v)] for m,v in zip(moons,vel)]
 		steps += 1
-		if moons == moonsMatch and vel == velMatch:
+		if moons == moonsMatch: #and vel == velMatch:
 			print(steps)
 			break
 
