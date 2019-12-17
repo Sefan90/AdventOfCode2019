@@ -1,0 +1,11 @@
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day16\obj\Debug\netcoreapp3.0\AdventOfCode2019Day16.csprojAssemblyReference.cache
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day16\obj\Debug\netcoreapp3.0\AdventOfCode2019Day16.AssemblyInfoInputs.cache
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day16\obj\Debug\netcoreapp3.0\AdventOfCode2019Day16.AssemblyInfo.cs
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day16\bin\Debug\netcoreapp3.0\AdventOfCode2019Day16.exe
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day16\bin\Debug\netcoreapp3.0\AdventOfCode2019Day16.deps.json
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day16\bin\Debug\netcoreapp3.0\AdventOfCode2019Day16.runtimeconfig.json
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day16\bin\Debug\netcoreapp3.0\AdventOfCode2019Day16.runtimeconfig.dev.json
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day16\bin\Debug\netcoreapp3.0\AdventOfCode2019Day16.dll
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day16\bin\Debug\netcoreapp3.0\AdventOfCode2019Day16.pdb
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day16\obj\Debug\netcoreapp3.0\AdventOfCode2019Day16.dll
+C:\Users\Sefan\Documents\GitHub\AdventOfCode2019\AdventOfCode2019Day16\obj\Debug\netcoreapp3.0\AdventOfCode2019Day16.pdb

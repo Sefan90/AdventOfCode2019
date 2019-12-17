@@ -7,11 +7,11 @@ def GetIntArray(number):
 		result = [0]
 	return result
 
-def MakePattern(inputList)
+def MakePattern(inputList):
 	listPattern = []
 	basePattern = [0,1,0,-1]
 	bigPattern = [1,0,-1,0]
-	for i in range(2,len(splitedList)+2):
+	for i in range(2,len(inputList)+2):
 		for b in range(len(basePattern)):
 			bigPattern.insert(i*b,basePattern[b])
 		listPattern.append(bigPattern)
@@ -39,10 +39,10 @@ def Part1():
 			output = 0
 			bp = 0
 			for item in splitedList:
-				output += item*bigPattern[bp]
+				output += item*patternList[i-1][bp]
 				#print(output)
 				bp += 1
-				bp = bp%len(bigPattern)
+				bp = bp%len(patternList)
 			newList.append(abs(output)%10)
 		splitedList = newList
 
