@@ -20,10 +20,11 @@ def Part2():
 						vel[x][y] -= 1
 		moons = [[x+y for x,y in zip(m,v)] for m,v in zip(moons,vel)]
 		steps += 1
+		#print(steps)
 		if moons == moonsMatch: #and vel == velMatch:
 			print(steps)
 			break
-
+ 
 def Part1():
 	output = 0
 	moons = [[-4,-14,8],[1,-8,10],[-15, 2, 1],[-17, -17, 16]]
