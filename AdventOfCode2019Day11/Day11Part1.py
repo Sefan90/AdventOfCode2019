@@ -126,8 +126,8 @@ def Part1():
 		inputCommand[0] = rotation[0]
 		inputCommand[1] = rotation[1]
 		inputCommand[2] = [paintList[lastXY]]
-	#print(paintList)
-	print(distinctPaintList)
+	print(len(paintList))
+	print(len(distinctPaintList))
 	#print(paintList[len(paintList)-1][1]+1)
 	#paintList.append(paintList[len(paintList)-1][1]+1)
 	#print(paintList[len(paintList)-1])
