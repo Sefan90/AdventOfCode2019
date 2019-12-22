@@ -36,7 +36,7 @@ def Part2():
 	file = open("input.txt")
 	actions = file.read().split('\n')
 
-	for _ in range(shuffle):
+	for i in range(shuffle):
 		for item in actions:
 			if item.split()[1] == 'into': #deal into new stack
 				card = totalCards - card
