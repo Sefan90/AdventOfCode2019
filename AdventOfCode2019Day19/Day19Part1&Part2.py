@@ -110,6 +110,7 @@ def Part2():
     counter = 0
     firstOne = 0
     lastOne = 0
+    firstHit = False
     lastHit = False
     checkList = []
     checkbreak = 0
@@ -122,23 +123,29 @@ def Part2():
             if result[x][y] == 1:
                 counter += 1
                 lastHit = True
-                if firstOne < y:
+                if firstHit == False:
                     firstOne = y
+                    firstHit = True
             elif lastHit == True:
                 lastHit = False
-                lastOne = y
+                firstHit = False
+                lastOne = y-1
                 break
-        if lastOne - firstOne <= 100:
-            checkList.append([x,firstOne,x+100,lastOne])
+        #print(lastOne - firstOne)
+        if lastOne - firstOne >= 100:
+            checkList.append([x,lastOne-100,x+100,lastOne])
         for item in reversed(checkList):
             if item[2] == x and item[1] >= firstOne and item[3] <= lastOne:
+                print(item)
                 checkbreak = item[2]*10000+item[1]
                 break
             elif item[2] < x:
                 checkList.remove(item)
         if checkbreak != 0:
             break
-        print(x)
+        #print(x)
     print(checkbreak)
+    #print(checkList)
+    #print(result)
 
 Part2()
