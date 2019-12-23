@@ -6,10 +6,12 @@
 '''
 def Part2():
 	moons = [[-4,-14,8],[1,-8,10],[-15, 2, 1],[-17, -17, 16]]
+	#moons = [[-1,0,2],[2,-10,-7],[4,-8,8],[3,5,-1]] #Test
 	vel = [[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
 	moonsMatch = [[-4,-14,8],[1,-8,10],[-15, 2, 1],[-17, -17, 16]]
+	#moonsMatch = [[-1,0,2],[2,-10,-7],[4,-8,8],[3,5,-1]] #Test
 	velMatch = [[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
-	steps = 0
+	steps = 1
 	while True:
 		for x in range(len(moons)):
 			for y in range(len(moons[0])):
@@ -20,9 +22,10 @@ def Part2():
 						vel[x][y] -= 1
 		moons = [[x+y for x,y in zip(m,v)] for m,v in zip(moons,vel)]
 		steps += 1
-		#print(steps)
 		if moons == moonsMatch: #and vel == velMatch:
 			print(steps)
+			print(moons)
+			print(moonsMatch)
 			break
  
 def Part1():
