@@ -23,7 +23,6 @@ def Part1():
 				#print(element[1])
 				#print(row[len(row)-1][0][1])
 				if element[1] == row[len(row)-1][0][1]:
-					print(element[1])
 					if int(element[0]) <= int(row[len(row)-1][0][0]):
 						tmp = [[item[i] for i in range(len(item))] for item in row[:-1]]
 						tempList.extend(tmp[0])
