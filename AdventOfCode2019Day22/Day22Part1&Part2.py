@@ -44,7 +44,7 @@ def Part2():
 				card -= int(item.split()[1])
 			elif item.split()[1] == 'with': #deal with increment
 				card = card*int(item.split()[3])%totalCards
-
+		#print(card)
 	print(card)
 
 Part2()
