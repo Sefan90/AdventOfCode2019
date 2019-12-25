@@ -37,20 +37,15 @@ def Part1():
 		for x in range(len(moons)):
 			for y in range(len(moons[0])):
 				for moon in moons:
-					print(str(moons[x][y])+" "+str(moon[y]))
 					if moons[x][y] < moon[y]:
 						vel[x][y] += 1
 					elif moons[x][y] > moon[y]:
 						vel[x][y] -= 1
-		for x in range(len(moons)):
-			for y in range(len(moon)):	
-				moons[x][y] += vel[x][y]
-		print(moons)
-		print(vel)
+		moons = [[x+y for x,y in zip(m,v)] for m,v in zip(moons,vel)]
 		if step >= steps-1:
 			for i in range(len(moons)):
 				output += (abs(moons[i][0])+abs(moons[i][1])+abs(moons[i][2]))*(abs(vel[i][0])+abs(vel[i][1])+abs(vel[i][2]))
 			print(output)
 
 
-Part2()
+Part1()
