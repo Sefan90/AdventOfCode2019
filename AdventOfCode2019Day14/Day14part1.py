@@ -73,7 +73,19 @@ def Part1():
 			break
 	print(fuelList[0][0])
 
-Part1()
+def Part11():
+	ORES = 0
+	startlist = ['9 ORE => 2 A','8 ORE => 3 B','7 ORE => 5 C','3 A, 4 B => 1 AB','5 B, 7 C => 1 BC','4 C, 1 A => 1 CA','2 AB, 3 BC, 4 CA => 1 FUEL']
+	oreList = []
+	splitedlist = [[[ i.split(" ") for i in item.split(", ")]for item in sl.split(" => ")] for sl in startlist]
+	for i in range(len(splitedlist)):
+		print(splitedlist[i][0][0][1])
+		if splitedlist[i][0][0][1] == "ORE":
+			oreList += splitedlist[i][len(splitedlist[i])-1]
+	print(oreList)
+
+
+Part11()
 #342346
 #2716308
 #435408 För högt
